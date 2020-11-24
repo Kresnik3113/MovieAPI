@@ -23,7 +23,7 @@
             <version>${jakartaee}</version>
             <scope>provided</scope>
         </dependency>
-127.0.0.1:49000 /api/hello/Cristina
+
         <dependency>
             <groupId>com.sun.activation</groupId>
             <artifactId>jakarta.activation</artifactId>
