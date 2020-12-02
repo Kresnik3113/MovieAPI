@@ -71,6 +71,11 @@ public class Customer {
         this.customerAccounts = customerAccounts;
     }
     
+    public void addAccountToCustomer(Account account) {
+        (this.customerAccounts).add(account);
+        System.out.println("Added a new account to customer");
+    }
+    
     public String printCustomer() {
         String str = this.getId()+" "+this.getName()+ " "+this.getAddress()+ " "+this.getEmail();
         return str;

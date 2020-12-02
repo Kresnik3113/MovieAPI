@@ -6,10 +6,6 @@
 */
 package com.mycompany.movieapi.resources;
 
-/**
- *
- * @author maxde
- */
 public class MovieResource {
     
 }

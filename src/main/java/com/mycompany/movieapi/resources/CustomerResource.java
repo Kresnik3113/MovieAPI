@@ -53,12 +53,32 @@ public class CustomerResource {
         return customerService.getCustomer(id);
     }
     
+    /*
+        Example Postman POST: http://127.0.0.1:49000/api/customers
+        JSON BODY:
+        {
+            "name": "Jurial",
+            "address": "49 Lindin Drive",
+            "email": "Jurial5959@gmail.com",
+            "customerAccounts": {
+            "id": 1,
+            "nickName": "Lolster",
+            "password":"ABC123"
+            }
+        }
+    */
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Customer postAccount(Customer a) {
         return customerService.createCustomerAccount(a);
-    } 
+    }
+    
+    @Path("/{customerID}/accounts")
+    public AccountResource getAccountsResource() {
+	System.out.println("Getting accounts subresoruces...");
+	return new AccountResource();
+    }
 } 
     
     
