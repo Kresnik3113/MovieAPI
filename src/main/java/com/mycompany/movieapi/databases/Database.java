@@ -8,6 +8,7 @@ package com.mycompany.movieapi.databases;
 
 import com.mycompany.movieapi.models.Account;
 import com.mycompany.movieapi.models.Customer;
+import com.mycompany.movieapi.models.Movie;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +18,7 @@ public class Database {
     public static ArrayList<Account> accountDB1 = new ArrayList<>();
     public static ArrayList<Account> accountDB2 = new ArrayList<>();
     public static ArrayList<Account> accountDB3 = new ArrayList<>();
+     public static List<Movie> movieDB = new ArrayList<>();
     public static boolean init = true;
     
     public Database(){
@@ -42,9 +44,17 @@ public class Database {
             accountDB3.add(acc5);
             accountDB3.add(acc6);
             
-            Customer cus1 = new Customer(1, "Jack Furgerson", "2 Bonville Drive", "Jack015@gmail.com", accountDB1);
-            Customer cus2 = new Customer(2, "Kelly Smith", "44 Bonville Drive", "Kelly55@gmail.com", accountDB2);
-            Customer cus3 = new Customer(3, "Daryl Nixon", "35 Carrik Ave", "DarylNixon5595@outlook.co.uk", accountDB3);
+            Movie m1 = new Movie (1,"The Dark Knight");  
+            Movie m2 = new Movie (2,"Inception");
+            Movie m3 = new Movie (3,"Fight Club");
+
+            movieDB.add(m1);
+            movieDB.add(m2);
+            movieDB.add(m3);
+            
+            Customer cus1 = new Customer(1, "Jack Furgerson", "2 Bonville Drive", "Jack015@gmail.com", accountDB1,movieDB);
+            Customer cus2 = new Customer(2, "Kelly Smith", "44 Bonville Drive", "Kelly55@gmail.com", accountDB2,movieDB);
+            Customer cus3 = new Customer(3, "Daryl Nixon", "35 Carrik Ave", "DarylNixon5595@outlook.co.uk", accountDB3,movieDB);
             
             //Customer cus1 = new Customer(1, "Jack Furgerson", "2 Bonville Drive", "Jack015@gmail.com", accountDB1);
             //Customer cus2 = new Customer(2, "Kelly Smith", "44 Bonville Drive", "Kelly55@gmail.com", accountDB2);
@@ -65,4 +75,8 @@ public class Database {
     public ArrayList<Account> getAccountDB(){
         return accountDB;
     }
+    public ArrayList<Movie> getMovieDB(){
+        return MovieDB;
+    }
+    
 }
