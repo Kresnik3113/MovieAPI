@@ -37,8 +37,7 @@ public class Movie {
         this.Movie_name = Movie_name;
     }
     public int getID(){
-     return ID;   
-        
+     return ID;        
     }
     public void setID(int ID){
      this.ID=ID;   
