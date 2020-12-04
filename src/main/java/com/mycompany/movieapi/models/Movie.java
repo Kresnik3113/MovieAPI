@@ -14,16 +14,35 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement
 public class Movie {
+    private String Movie_name
+    private int ID;
     private boolean watched;
     private boolean recommended;
     private String summary;
     
-    //public Movie(){}
+    public Movie(){}
     
-    public Movie(String summary, boolean watched, boolean recommended){
+    public Movie(String Movie_name,int ID,String summary, boolean watched, boolean recommended){
+        this.Movie_name=Movie_name;
+        this.ID=ID;
         this.summary = summary;
         this.watched = watched;
         this.recommended = recommended;
+    }
+    
+    public String getMovie_name(){
+       return Movie_name;
+    }
+    public void setMovie_name(String Movie_name) {
+        this.Movie_name = Movie_name;
+    }
+    public int getID(){
+     return ID;   
+        
+    }
+    public void setID(int ID){
+     this.ID=ID;   
+        
     }
 
     public boolean isWatched() {
