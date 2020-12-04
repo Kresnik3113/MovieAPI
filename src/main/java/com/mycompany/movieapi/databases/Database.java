@@ -44,9 +44,9 @@ public class Database {
             accountDB3.add(acc5);
             accountDB3.add(acc6);
             
-            Movie m1 = new Movie (1,"The Dark Knight");  
-            Movie m2 = new Movie (2,"Inception");
-            Movie m3 = new Movie (3,"Fight Club");
+            Movie m1 = new Movie (1,"The Dark Knight","Watched","Recommended","Check the summery section");  
+            Movie m2 = new Movie (2,"Inception","Watched","Recommended","Check the summery section");
+            Movie m3 = new Movie (3,"Fight Club","Not Watched","Not Recommended","Check the summery section");
 
             movieDB.add(m1);
             movieDB.add(m2);
