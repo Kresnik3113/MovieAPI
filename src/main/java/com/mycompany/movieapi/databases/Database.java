@@ -18,7 +18,7 @@ public class Database {
     public static ArrayList<Account> accountDB1 = new ArrayList<>();
     public static ArrayList<Account> accountDB2 = new ArrayList<>();
     public static ArrayList<Account> accountDB3 = new ArrayList<>();
-     public static List<Movie> movieDB = new ArrayList<>();
+    public static ArrayList<Movie> movieDB = new ArrayList<>();
     public static boolean init = true;
     
     public Database(){
@@ -44,9 +44,9 @@ public class Database {
             accountDB3.add(acc5);
             accountDB3.add(acc6);
             
-            Movie m1 = new Movie (1,"The Dark Knight","Watched","Recommended","Check the summery section");  
-            Movie m2 = new Movie (2,"Inception","Watched","Recommended","Check the summery section");
-            Movie m3 = new Movie (3,"Fight Club","Not Watched","Not Recommended","Check the summery section");
+            Movie m1 = new Movie (1,"The Dark Knight","Check the summery section",Boolean.TRUE,Boolean.TRUE);  
+            Movie m2 = new Movie (2,"Inception","Check the summery section",Boolean.TRUE,Boolean.TRUE);
+            Movie m3 = new Movie (3,"Fight Club","Check the summery section",Boolean.FALSE,Boolean.FALSE);
 
             movieDB.add(m1);
             movieDB.add(m2);
@@ -76,7 +76,7 @@ public class Database {
         return accountDB;
     }
     public ArrayList<Movie> getMovieDB(){
-        return MovieDB;
+        return movieDB;
     }
     
 }
