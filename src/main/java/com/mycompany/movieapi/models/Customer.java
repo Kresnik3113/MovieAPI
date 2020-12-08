@@ -20,15 +20,17 @@ public class Customer {
     private String email;
     private int id;
     private ArrayList<Account> customerAccounts = new ArrayList();
+    private ArrayList<Movie> customerMovies = new ArrayList();
     
     public Customer(){}
     
-    public Customer(int id, String name, String address, String email, ArrayList<Account> customerAccounts){
+    public Customer(int id, String name, String address, String email, ArrayList<Account> customerAccounts,ArrayList<Movie> customerMovies){
         this.id = id;
         this.name = name;
         this.address = address;
         this.email = email;
         this.customerAccounts = customerAccounts;
+        this.customerMovies=customerMovies;
     }
 
     public String getName() {
@@ -71,9 +73,28 @@ public class Customer {
         this.customerAccounts = customerAccounts;
     }
     
+     public ArrayList<Movie> getCustomerMovies() {
+        return customerMovies;
+    }
+
+    public void setCustomerMovies(ArrayList<Movie> customerMovies) {
+        this.customerMovies = customerMovies;
+    }
+    
+    
     public void addAccountToCustomer(Account account) {
         (this.customerAccounts).add(account);
         System.out.println("Added a new account to customer");
+    }
+    
+    public void addMovieToCustomer(Movie movie) {
+        (this.customerMovies).add(movie);
+        System.out.println("Added a new movie to customer");
+    }
+    
+    public void deleteMovieOFCustomer(Movie movie) {
+        (this.customerMovies).remove(movie);
+        System.out.println("deleted the movie from customer account");
     }
     
     public String printCustomer() {
