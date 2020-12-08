@@ -11,43 +11,37 @@ import java.util.List;
  * @author bellal
  */
 public class MovieService {
-    
-    private List<Customer> list = new Database().getCustomersDB();
-    private List<Movie> movietslist = new Database().getMovieDB(); 
+    private List<Customer> customerlist = new Database().getCustomersDB();
+    private List<Movie> movielist = new Database().getMovieDB(); 
     
     public List<Movie> getAllMoviesByCustomer(int CustomerID) {
-        return list.get(CustomerID-1).getMovies();
+        return customerlist.get(CustomerID-1).getCustomerMovies();
     }
     
     public Movie getMovieByID(int CustomerID, int MovieID) {
-        return list.get(CustomerID-1).getMovies().get(MovieID-1);
+        return customerlist.get(CustomerID-1).getCustomerMovies().get(MovieID-1);
     }
 
-    public List<Movie> getAllMovies() {
-        return movieslist;
+    public List<Movie> getAllAccounts() {
+        return movielist;
     }
     
-    public Movie createMovie(Movie m, int m_id){
+    public Movie createMovie(Movie m, int c_id){
     
         
-        Customer cus = list.get(m_id-1);
-        c.setId(cus.getMovies().size() + 1);
-	cus.addMovieToCus(m);
+        Customer cus = customerlist.get(c_id-1);
+        m.setID(cus.getCustomerMovies().size() + 1);
+	cus.addMovieToCustomer(m);
         
         
-	System.out.println("201 - resource created with path: /movies/" + String.valueOf(cus.getId())+"/movies/"+String.valueOf(m.getId()));
-        System.out.println("Updated Coustomersinfo:"+m.printMovie());
-	return c;
+	System.out.println("201 - resource created with path: /customers/" + String.valueOf(cus.getId())+"/accounts/"+String.valueOf(m.getID()));
+        System.out.println("Updated Customer:"+m.printMovie());
+	return m;
     }
     
-    /* public Movie deleteMovie(Movie m, int m_id){
     
-        
-        Message msg = list.get(m_id-1);
-	list.remove(msg);
-         return null;
-     }*/
-    
-    
-    
+     public void deleteeMovie(int CustomerID, int MovieID){
+         movielist.remove(MovieID);
+         
+    }
 }
