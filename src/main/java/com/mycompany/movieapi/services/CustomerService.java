@@ -25,6 +25,14 @@ public class CustomerService {
 	return c;
     }
     
+     public Customer createCustomerMovie(Customer c1){
+        c1.setId(customerList.size() + 1);
+	customerList.add(c1);
+	System.out.println("201 - resource created with path: /customers/" + String.valueOf(c1.getId()));
+        System.out.println("Updated Customer:"+c1.printCustomer());
+	return c1;
+    }
+    
     public ArrayList<Customer> getAllCustomers() {
         return customerList;
     }
