@@ -12,6 +12,7 @@ import java.util.List;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -47,5 +48,11 @@ public class MovieResource {
 	return MovieService.getMovieByID(c_id,m_id);
     }
     
+     @DELETE
+    @Path("/{movieID}")
+    public void deleteMovie(@PathParam("movieID") int m_id,@PathParam("customerID") int c_id ) {
+    
+	MovieService.deleteeMovie(m_id,c_id);
+    }
+    
 }
-
