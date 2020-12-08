@@ -14,17 +14,18 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement
 public class Movie {
-    private String Movie_name
+    private String Movie_name;
     private int ID;
+    private String summary;
     private boolean watched;
     private boolean recommended;
-    private String summary;
+    
     
     public Movie(){}
     
-    public Movie(String Movie_name,int ID,String summary, boolean watched, boolean recommended){
-        this.Movie_name=Movie_name;
+    public Movie(int ID,String Movie_name,String summary, boolean watched, boolean recommended){
         this.ID=ID;
+        this.Movie_name=Movie_name;
         this.summary = summary;
         this.watched = watched;
         this.recommended = recommended;
@@ -68,5 +69,9 @@ public class Movie {
         this.summary = summary;
     }
     
+     public String printMovie(){
+        String str = this.getID()+" "+this.getMovie_name();
+        return str;
+    }
     
 }
