@@ -79,6 +79,18 @@ public class CustomerResource {
 	System.out.println("Getting accounts subresoruces...");
 	return new AccountResource();
     }
-} 
+    ///
+     @POST
+
+    @Produces(MediaType.APPLICATION_JSON)
+    public Customer postMovies(Customer c) {
+        return customerService.createCustomerMovie(c);
+    }
     
-    
+    @Path("/{customerID}/movies")
+    public MovieResource getMovieResource() {
+	System.out.println("Getting movies subresoruces...");
+	return new MovieResource();
+    }
+   
+}   
