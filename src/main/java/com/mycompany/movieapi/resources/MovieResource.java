@@ -38,8 +38,8 @@ public class MovieResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Movie postMovie(@PathParam("customerID") int c_id,int a_id ,Movie m) {
-	return MovieService.createMovie(m, c_id,a_id);
+    public Movie postMovie(@PathParam("customerID") int c_id,@PathParam("accountID") int a_id,@PathParam("movieID")Movie m) {
+	return MovieService.createMovie(m,c_id,a_id);
     }
     @GET
     @Path("/{movieID}")
