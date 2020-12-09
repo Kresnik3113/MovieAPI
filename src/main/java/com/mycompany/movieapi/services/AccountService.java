@@ -7,6 +7,7 @@ package com.mycompany.movieapi.services;
 import com.mycompany.movieapi.databases.Database;
 import com.mycompany.movieapi.models.Account;
 import com.mycompany.movieapi.models.Customer;
+import com.mycompany.movieapi.models.Movie;
 import java.util.List;
 
 /**
@@ -41,5 +42,9 @@ public class AccountService {
 	System.out.println("201 - resource created with path: /customers/" + String.valueOf(cus.getId())+"/accounts/"+String.valueOf(a.getId()));
         System.out.println("Updated Customer:"+a.printAccount());
 	return a;
+    }
+    public void  transfer(int CustomerID, int AccountID,int idAdd,int idRemove,Movie movie){
+        accountlist.get(idAdd).addMovieToAccount(movie);
+        accountlist.get(idRemove).deleteMovieOFAccount(movie);
     }
 }

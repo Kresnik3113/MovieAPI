@@ -23,12 +23,21 @@ public class Database {
     
     public Database(){
         if(init) {
-            Account acc1 = new Account(1, "JackF005", "Jackie123");
-            Account acc2 = new Account(2, "Alfie", "Alfie123");
-            Account acc3 = new Account(3, "Xav", "Xav555");
-            Account acc4 = new Account(4, "Amy", "Amy123");
-            Account acc5 = new Account(5, "Larry", "Larry4569");
-            Account acc6 = new Account(6, "Liff", "Liff051");
+            
+            Movie m1 = new Movie (1,"The Dark Knight","Check the summery section",Boolean.TRUE,Boolean.TRUE);  
+            Movie m2 = new Movie (2,"Inception","Check the summery section",Boolean.TRUE,Boolean.TRUE);
+            Movie m3 = new Movie (3,"Fight Club","Check the summery section",Boolean.FALSE,Boolean.FALSE);
+
+            movieDB.add(m1);
+            movieDB.add(m2);
+            movieDB.add(m3);
+            
+            Account acc1 = new Account(1, "JackF005", "Jackie123",movieDB);
+            Account acc2 = new Account(2, "Alfie", "Alfie123",movieDB);
+            Account acc3 = new Account(3, "Xav", "Xav555",movieDB);
+            Account acc4 = new Account(4, "Amy", "Amy123",movieDB);
+            Account acc5 = new Account(5, "Larry", "Larry4569",movieDB);
+            Account acc6 = new Account(6, "Liff", "Liff051",movieDB);
             
             accountDB.add(acc1);
             accountDB.add(acc2);
@@ -44,17 +53,11 @@ public class Database {
             accountDB3.add(acc5);
             accountDB3.add(acc6);
             
-            Movie m1 = new Movie (1,"The Dark Knight","Check the summery section",Boolean.TRUE,Boolean.TRUE);  
-            Movie m2 = new Movie (2,"Inception","Check the summery section",Boolean.TRUE,Boolean.TRUE);
-            Movie m3 = new Movie (3,"Fight Club","Check the summery section",Boolean.FALSE,Boolean.FALSE);
 
-            movieDB.add(m1);
-            movieDB.add(m2);
-            movieDB.add(m3);
             
-            Customer cus1 = new Customer(1, "Jack Furgerson", "2 Bonville Drive", "Jack015@gmail.com", accountDB1,movieDB);
-            Customer cus2 = new Customer(2, "Kelly Smith", "44 Bonville Drive", "Kelly55@gmail.com", accountDB2,movieDB);
-            Customer cus3 = new Customer(3, "Daryl Nixon", "35 Carrik Ave", "DarylNixon5595@outlook.co.uk", accountDB3,movieDB);
+            Customer cus1 = new Customer(1, "Jack Furgerson", "2 Bonville Drive", "Jack015@gmail.com", accountDB1);
+            Customer cus2 = new Customer(2, "Kelly Smith", "44 Bonville Drive", "Kelly55@gmail.com", accountDB2);
+            Customer cus3 = new Customer(3, "Daryl Nixon", "35 Carrik Ave", "DarylNixon5595@outlook.co.uk", accountDB3);
             
             //Customer cus1 = new Customer(1, "Jack Furgerson", "2 Bonville Drive", "Jack015@gmail.com", accountDB1);
             //Customer cus2 = new Customer(2, "Kelly Smith", "44 Bonville Drive", "Kelly55@gmail.com", accountDB2);
