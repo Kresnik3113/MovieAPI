@@ -37,7 +37,7 @@ public class MovieService {
         return movielist;
     }
     
-    public Movie createMovie(Movie m,int c_id, int a_id){
+    public Movie createMovie(int c_id, int a_id,Movie m){
     
         
         Account act = customerlist.get(c_id-1).getCustomerAccounts().get(a_id);
