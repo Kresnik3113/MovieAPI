@@ -15,7 +15,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Movie {
     private String Movie_name;
-    private int ID;
+    private int id;
     private String summary;
     private boolean watched;
     private boolean recommended;
@@ -23,8 +23,8 @@ public class Movie {
     
     public Movie(){}
     
-    public Movie(int ID,String Movie_name,String summary, boolean watched, boolean recommended){
-        this.ID=ID;
+    public Movie(int id,String Movie_name,String summary, boolean watched, boolean recommended){
+        this.id=id;
         this.Movie_name=Movie_name;
         this.summary = summary;
         this.watched = watched;
@@ -38,10 +38,10 @@ public class Movie {
         this.Movie_name = Movie_name;
     }
     public int getID(){
-     return ID;        
+     return id;        
     }
-    public void setID(int ID){
-     this.ID=ID;   
+    public void setID(int id){
+     this.id=id;   
         
     }
 

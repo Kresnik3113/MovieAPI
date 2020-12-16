@@ -79,6 +79,8 @@ public class CustomerResource {
 	System.out.println("Getting accounts subresoruces...");
 	return new AccountResource();
     }
+    
+    
     ///
      @POST
 
@@ -87,7 +89,7 @@ public class CustomerResource {
         return customerService.createCustomerMovie(c);
     }
     
-    @Path("/{customerID}/movies")
+    @Path("/{customerID}/accounts/{accountID}/movies/{movieID}")
     public MovieResource getMovieResource() {
 	System.out.println("Getting movies subresoruces...");
 	return new MovieResource();

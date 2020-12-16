@@ -41,18 +41,35 @@ public class MovieResource {
     public Movie postMovie(@PathParam("customerID") int c_id,@PathParam("accountID") int a_id,@PathParam("movieID")Movie m) {
 	return MovieService.createMovie(m,c_id,a_id);
     }
+    /*
+    GET http://127.0.0.1:49000/api/movies/1/1/2
+            {
+    "ID": 2,
+    "movie_name": "Inception",
+    "recommended": true,
+    "summary": "Check the summery section",
+    "watched": true
+}
+    */
     @GET
-    @Path("/{movieID}")
-    public Movie getMovie(@PathParam("movieID") int m_id,@PathParam("customerID") int c_id,@PathParam("accountID") int a_id) {
+    @Path("{customerID}/{accountID}/{movieID}")
+    public Movie getMovie(@PathParam("customerID") int c_id,@PathParam("accountID") int a_id,@PathParam("movieID") int m_id) {
     	System.out.println("getmovieByID..."+m_id +" for AccountID "+a_id);
-	return MovieService.getMovieByID(c_id, a_id,m_id);
+	return MovieService.getMovieByID(c_id,a_id,m_id);
     }
     
      @DELETE
-    @Path("/{movieID}")
-    public void deleteMovie(@PathParam("movieID") int m_id,@PathParam("customerID") int c_id,@PathParam("accountID") int a_id ) {
+    @Path("{customerID}/{accountID}/{movieID}")
+    public void deleteMovie(@PathParam("customerID") int c_id,@PathParam("accountID") int a_id,@PathParam("movieID") int m_id) {
     
 	MovieService.deleteeMovie(c_id,a_id,m_id);
     }
+    @POST
+    @Path("{customerID}/{accountID}/{accountID1}/{movieID}")
+    public void transferMovie(@PathParam("customerID") int c_id,@PathParam("accountID") int a_id,@PathParam("accountID1") int a_id1,@PathParam("movieID")int m_id) {
+        System.out.println("Transfering movie....");
+	MovieService.transferMovie(c_id, a_id, a_id1,m_id);
+    }
+    
     
 }
