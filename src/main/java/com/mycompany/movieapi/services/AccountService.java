@@ -43,8 +43,5 @@ public class AccountService {
         System.out.println("Updated Customer:"+a.printAccount());
 	return a;
     }
-    public void  transfer(int CustomerID, int AccountID,int idAdd,int idRemove,Movie movie){
-        accountlist.get(idAdd).addMovieToAccount(movie);
-        accountlist.get(idRemove).deleteMovieOFAccount(movie);
-    }
+
 }

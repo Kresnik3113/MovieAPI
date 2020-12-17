@@ -13,15 +13,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Database {
-    public static ArrayList<Customer> customerDB = new ArrayList<>();
-    public static ArrayList<Account> accountDB = new ArrayList<>();
-    public static ArrayList<Account> accountDB1 = new ArrayList<>();
-    public static ArrayList<Account> accountDB2 = new ArrayList<>();
-    public static ArrayList<Account> accountDB3 = new ArrayList<>();
-    public static ArrayList<Movie> movieDB = new ArrayList<>();
-    public static ArrayList<Movie> movieDB1 = new ArrayList<>();
-    public static ArrayList<Movie> movieDB2 = new ArrayList<>();
-    public static boolean init = true;
+    private static ArrayList<Customer> customerDB = new ArrayList<>();
+    private static ArrayList<Account> accountDB = new ArrayList<>();
+    private static ArrayList<Account> accountDB1 = new ArrayList<>();
+    private static ArrayList<Account> accountDB2 = new ArrayList<>();
+    private static ArrayList<Account> accountDB3 = new ArrayList<>();
+    private static ArrayList<Movie> movieDB = new ArrayList<>();
+    private static ArrayList<Movie> movieDB1 = new ArrayList<>();
+    private static ArrayList<Movie> movieDB2 = new ArrayList<>();
+    private static boolean init = true;
     
     public Database(){
         if(init) {

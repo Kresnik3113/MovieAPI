@@ -8,6 +8,7 @@ package com.mycompany.movieapi.resources;
 
 import com.mycompany.movieapi.models.Customer;
 import com.mycompany.movieapi.models.Account;
+import com.mycompany.movieapi.models.Movie;
 import com.mycompany.movieapi.services.CustomerService;
 import java.util.List;
 import javax.ws.rs.Consumes;
@@ -52,6 +53,12 @@ public class CustomerResource {
     public Customer getCustomerJSON(@PathParam("customerId") int id) {
         return customerService.getCustomer(id);
     }
+    
+//    @GET
+//    @Path("/customermovies/{customerId}")
+//    public List<Movie> getCustomerMovies(@PathParam("customerId") int id) {
+//        return customerService.getMovies(id);
+//    }
     
     /*
         Example Postman POST: http://127.0.0.1:49000/api/customers

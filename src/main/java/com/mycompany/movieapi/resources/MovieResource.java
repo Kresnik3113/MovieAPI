@@ -31,7 +31,32 @@ public class MovieResource {
     private AccountService AccountService=new AccountService();
     
     /*
-        GET http://127.0.0.1:49000/api/customers/1/movies
+        GET http://127.0.0.1:49000/api/customer/ShowAllMovies/1/1
+    
+    [
+    {
+        "ID": 1,
+        "movie_name": "The Dark Knight",
+        "recommended": true,
+        "summary": "Check the summery section",
+        "watched": true
+    },
+    {
+        "ID": 2,
+        "movie_name": "Inception",
+        "recommended": true,
+        "summary": "Check the summery section",
+        "watched": true
+    },
+    {
+        "ID": 3,
+        "movie_name": "Fight Club",
+        "recommended": false,
+        "summary": "Check the summery section",
+        "watched": false
+    }
+]
+    
     */
      @GET
      @Path("ShowAllMovies/{customerID}/{accountID}")
@@ -47,7 +72,7 @@ public class MovieResource {
 	return MovieService.createMovie(c_id,a_id,m);
     }
     /*
-    GET http://127.0.0.1:49000/api/movies/1/1/2
+    GET http://127.0.0.1:49000/api/customer/ShowMovie/1/1/2
             {
     "ID": 2,
     "movie_name": "Inception",
@@ -62,13 +87,182 @@ public class MovieResource {
     	System.out.println("getmovieByID..."+m_id +" for AccountID "+a_id);
 	return MovieService.getMovieByID(c_id,a_id,m_id);
     }
+    /*
+       DELETE http://127.0.0.1:49000/api/customer/MovieTransfer/1/1/3
+     {
+        "ID": 1,
+        "movie_name": "The Dark Knight",
+        "recommended": true,
+        "summary": "Check the summery section",
+        "watched": true
+    },
+    {
+        "ID": 2,
+        "movie_name": "Inception",
+        "recommended": true,
+        "summary": "Check the summery section",
+        "watched": true
+    }
+
     
+    */
      @DELETE
     @Path("MovieDelete/{customerID}/{accountID}/{movieID}")
     public List<Movie> deleteMovie(@PathParam("customerID") int c_id,@PathParam("accountID") int a_id,@PathParam("movieID") int m_id) {    
 	MovieService.deleteeMovie(c_id,a_id,m_id);
         return MovieService.getAllMoviesByAccount(c_id,a_id);
+    }/*
+        POST http://127.0.0.1:49000/api/customer/MovieTransfer/1/1/2/1
+    [
+    {
+        "accountMovies": [
+            {
+                "ID": 2,
+                "movie_name": "Inception",
+                "recommended": true,
+                "summary": "Check the summery section",
+                "watched": true
+            },
+            {
+                "ID": 3,
+                "movie_name": "Fight Club",
+                "recommended": false,
+                "summary": "Check the summery section",
+                "watched": false
+            }
+        ],
+        "id": 1,
+        "nickName": "JackF005",
+        "password": "Jackie123"
+    },
+    {
+        "accountMovies": [
+            {
+                "ID": 1,
+                "movie_name": "Ted1",
+                "recommended": false,
+                "summary": "Check the summery section",
+                "watched": false
+            },
+            {
+                "ID": 2,
+                "movie_name": "Ted2",
+                "recommended": false,
+                "summary": "Check the summery section",
+                "watched": false
+            },
+            {
+                "ID": 3,
+                "movie_name": "Ted3",
+                "recommended": false,
+                "summary": "Check the summery section",
+                "watched": false
+            },
+            {
+                "ID": 4,
+                "movie_name": "The Dark Knight",
+                "recommended": true,
+                "summary": "Check the summery section",
+                "watched": true
+            }
+        ],
+        "id": 2,
+        "nickName": "Alfie",
+        "password": "Alfie123"
+    },
+    {
+        "accountMovies": [
+            {
+                "ID": 1,
+                "movie_name": "Bob",
+                "recommended": false,
+                "summary": "Check the summery section",
+                "watched": false
+            },
+            {
+                "ID": 2,
+                "movie_name": "Bob2",
+                "recommended": false,
+                "summary": "Check the summery section",
+                "watched": false
+            },
+            {
+                "ID": 3,
+                "movie_name": "Bob3",
+                "recommended": false,
+                "summary": "Check the summery section",
+                "watched": false
+            }
+        ],
+        "id": 3,
+        "nickName": "Xav",
+        "password": "Xav555"
+    },
+    {
+        "accountMovies": [
+            {
+                "ID": 2,
+                "movie_name": "Inception",
+                "recommended": true,
+                "summary": "Check the summery section",
+                "watched": true
+            },
+            {
+                "ID": 3,
+                "movie_name": "Fight Club",
+                "recommended": false,
+                "summary": "Check the summery section",
+                "watched": false
+            }
+        ],
+        "id": 4,
+        "nickName": "Amy",
+        "password": "Amy123"
+    },
+    {
+        "accountMovies": [
+            {
+                "ID": 2,
+                "movie_name": "Inception",
+                "recommended": true,
+                "summary": "Check the summery section",
+                "watched": true
+            },
+            {
+                "ID": 3,
+                "movie_name": "Fight Club",
+                "recommended": false,
+                "summary": "Check the summery section",
+                "watched": false
+            }
+        ],
+        "id": 5,
+        "nickName": "Larry",
+        "password": "Larry4569"
+    },
+    {
+        "accountMovies": [
+            {
+                "ID": 2,
+                "movie_name": "Inception",
+                "recommended": true,
+                "summary": "Check the summery section",
+                "watched": true
+            },
+            {
+                "ID": 3,
+                "movie_name": "Fight Club",
+                "recommended": false,
+                "summary": "Check the summery section",
+                "watched": false
+            }
+        ],
+        "id": 6,
+        "nickName": "Liff",
+        "password": "Liff051"
     }
+]
+    */
     @POST
     @Path("MovieTransfer/{customerID}/{accountID}/{accountID1}/{movieID}")
     public List<Account> transferMovie(@PathParam("customerID") int c_id,@PathParam("accountID") int a_id,@PathParam("accountID1") int a_id1,@PathParam("movieID")int m_id) {
